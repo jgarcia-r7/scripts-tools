@@ -9,9 +9,8 @@
 ./extraMeta.sh -i <office_doc_urls> -o <output_file>
 Ex: ./extraMeta.sh -i urls.txt -o meta.txt
 ```
-![image](https://user-images.githubusercontent.com/81575551/122062527-7deb0780-cdbd-11eb-977f-f0430bdf13c4.png)
+![image](https://user-images.githubusercontent.com/81575551/122086828-14292880-cdd2-11eb-9aba-98eeace9acc2.png)
 
 **Example Output:** 
   
-![image](https://user-images.githubusercontent.com/81575551/122061750-cce46d00-cdbc-11eb-82de-c82a222640aa.png)
-
+![image](https://user-images.githubusercontent.com/81575551/122087014-476bb780-cdd2-11eb-8e32-f8e6c1110d4d.png)

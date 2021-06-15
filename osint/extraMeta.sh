@@ -32,10 +32,7 @@ done
 # Download files
 num_urls=$(wc -l $input | sed 's/[^0-9]*//g')
 echo -e ${YELLOW}[!] ${LCYAN}Downloading Documents From ${WHITE}$num_urls ${RED}URLs
-for url in $(cat $input);
-do
-	wget $url -P emtemp >/dev/null 2>&1
-done
+wget -i $input -P emtemp >/dev/null 2>&1
 echo -e ${GREEN}[+] ${LCYAN}Done
 
 
@@ -49,6 +46,7 @@ echo
 for file in $files;
 do
 	echo -e ${YELLOW}[*] ${LCYAN}Extracted Metadata From: ${RED}$file >> $output
+	url=$(cat $input | grep $file); echo -e ${LCYAN}URL: ${RED}$url >> $output
 	echo >> $output 
 	echo -e ${LCYAN}================================================ >> $output
 	echo -e ${GREEN} >> $output
@@ -60,8 +58,10 @@ echo
 
 # Finish
 echo -e ${GREEN}[+] ${LCYAN}Finished Extracting Metadata From ${WHITE}$num_files ${RED}Files
-echo -e ${YELLOW}[!] ${LCYAN}Cleaning Up Temp Directory And Zipping Up Files To emeta_files.zip
+echo -e ${GREEN}[+] ${LCYAN}Output File: ${RED}$output
+zip_name=$(echo $output | sed 's/.txt//')
+echo -e ${YELLOW}[!] ${LCYAN}Cleaning Up Temp Directory And Zipping Up Files To ${RED}$zip_name.zip
 rm dlfiles.txt
-zip -r emeta_filez.zip emtemp/ >/dev/null 2>&1 
+zip -r $zip_name.zip emtemp/ >/dev/null 2>&1 
 rm -rf emtemp/
 echo -e ${GREEN}[+] ${LCYAN}Done

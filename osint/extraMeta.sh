@@ -40,7 +40,7 @@ echo -e ${GREEN}[+] ${LCYAN}Done
 ls emtemp > dlfiles.txt
 files=$(cat dlfiles.txt)
 num_files=$(wc -l dlfiles.txt | sed 's/[^0-9]*//g')
-echo -e ${GREEN}[+] ${LCYAN}Donwloaded ${WHITE}$num_files ${RED}Files
+echo -e ${GREEN}[+] ${LCYAN}Downloaded ${WHITE}$num_files ${RED}Files
 echo -e ${YELLOW}[!] ${LCYAN}Extracting Metadata From ${WHITE}$num_files ${RED}Files
 echo
 for file in $files;

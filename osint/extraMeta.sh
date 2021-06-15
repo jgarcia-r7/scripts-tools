@@ -47,10 +47,10 @@ for file in $files;
 do
 	echo -e ${YELLOW}[*] ${LCYAN}Extracted Metadata From: ${RED}$file >> $output
 	url=$(cat $input | grep $file); echo -e ${LCYAN}URL: ${RED}$url >> $output
-	echo >> $output 
-	echo -e ${LCYAN}================================================ >> $output
-	echo -e ${GREEN} >> $output
+	echo -e ${GREEN} >> $output 
 	exiftool emtemp/$file -Author -Creator -LastModifiedBy -S | grep 'Author\|Creator' >> $output
+	echo -e ${LCYAN}================================================ >> $output
+	echo >> $output
 	echo >> $output
 done
 echo

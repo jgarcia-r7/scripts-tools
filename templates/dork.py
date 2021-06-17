@@ -26,8 +26,8 @@ def dork(domain,ft):
             f.write(f'{result}\n')
     except:
         print(f"[X] Dork failed for: {ft}")
-        print("[X] Failure is likely due to too many requests...")
-        print("Try again later")
+        print("Failure is likely due to too many requests...")
+        print("Try again later\n")
 
 for ft in fileTypes:
     dork(domain,ft)
